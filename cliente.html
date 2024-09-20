@@ -1,0 +1,52 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Processos Internos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo2.png" alt="Logo do Meu Site" class="logo">
+        <div class="botoes">
+            <div class="botao1">
+                <button onclick="window.location.href='index.html'">Manual de Processos</button>
+            </div>
+            <div class="botao2">
+                <button onclick="window.location.href='empresa.html'">Manual da Empresa</button>
+            </div>
+            <div class="botao3">
+                <button>Manual do Cliente</button>
+            </div>
+        </div>
+        <h1>Manual do Cliente</h1>
+        <div>
+            <div>
+                <label for="areas">Área:</label>
+                <select id="areas" onchange="loadCargos()">
+                    <option value="">Selecione uma área:</option>
+                </select>
+            </div>
+            <div>
+                <label for="cargos">Cargo:</label>
+                <select id="cargos" onchange="loadProcessos()">
+                    <option value="">Selecione um cargo:</option>
+                </select>
+            </div>
+            <div>
+                <label for="processos">Processo:</label>
+                <select id="processos" onchange="loadDetalhes()">
+                    <option value="">Selecione um processo:</option>
+                </select>
+            </div>
+            <div id="detalhes">
+                <h2>Detalhes do Processo:</h2>
+                <ul id="detalhes-list"></ul>
+            </div>
+            <div id="fluxograma" style="display: none;">
+            </div>
+        </div>
+    </div>
+    <script src="script3.js"></script>
+</body>
+</html>
