@@ -58,6 +58,9 @@ select {
     margin-bottom: 5px;
     border-radius: 5px;
 }
+#detalhes-list li:hover{
+    background-color: #112e64;
+}
 img{
     width: 160px;
     text-align: center;
