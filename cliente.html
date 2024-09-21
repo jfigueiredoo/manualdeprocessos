@@ -1,13 +1,29 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Processos Internos</title>
+    <title>Clientes - FCAP JR</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilização básica para mostrar os dados lado a lado */
+    
+        .info {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        strong{
+            color: #1a4492;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <img src="logo2.png" alt="Logo do Meu Site" class="logo">
+        <img src="logo2.png" alt="Logo da FCAP JR" class="logo">
         <div class="botoes">
             <div class="botao1">
                 <button onclick="window.location.href='index.html'">Manual de Processos</button>
@@ -16,37 +32,54 @@
                 <button onclick="window.location.href='empresa.html'">Manual da Empresa</button>
             </div>
             <div class="botao3">
-                <button>Manual do Cliente</button>
+                <button>Manual de Clientes</button>
             </div>
         </div>
-        <h1>Manual do Cliente</h1>
+        <h1>Manual de Clientes</h1>
+        
+        <!-- Dropdown para selecionar o cliente -->
         <div>
-            <div>
-                <label for="areas">Área:</label>
-                <select id="areas" onchange="loadCargos()">
-                    <option value="">Selecione uma área:</option>
-                </select>
+            <label for="clientes">Selecione um cliente:</label>
+            <select id="clientes" onchange="loadClientInfo()">
+                <option value="">Selecione um cliente:</option>
+            </select>
+        </div>
+
+        <!-- Dropdown para selecionar a categoria de informação -->
+        <div style="margin-top: 20px;">
+            <label for="info-type">Selecione o tipo de informação:</label>
+            <select id="info-type" onchange="showInfo()">
+                <option value="">Selecione um tipo de informação:</option>
+                <option value="informacoes">Informações do Cliente</option>
+                <option value="detalhes">Detalhes Adicionais</option>
+                <option value="pagamento">Método de Pagamento</option>
+                <option value="servicos">Serviços Prestados</option>
+            </select>
+        </div>
+
+        <!-- Conteiner para mostrar as informações do cliente -->
+        <div id="info-container" class="info-container" style="display: none;">
+            <div class="info" id="informacoes" style="display: none;">
+                <h2>Informações do Cliente</h2>
+                <p><strong>Nome do Cliente:</strong> <span id="cliente-nome"></span></p>
+                <p><strong>Setor de Atuação:</strong> <span id="cliente-setor"></span></p>
+                <p><strong>Email:</strong> <span id="cliente-email"></span></p>
             </div>
-            <div>
-                <label for="cargos">Cargo:</label>
-                <select id="cargos" onchange="loadProcessos()">
-                    <option value="">Selecione um cargo:</option>
-                </select>
+            <div class="info" id="detalhes" style="display: none;">
+                <h2>Detalhes Adicionais</h2>
+                <p><strong>Número de Contato:</strong> <span id="cliente-numero"></span></p>
             </div>
-            <div>
-                <label for="processos">Processo:</label>
-                <select id="processos" onchange="loadDetalhes()">
-                    <option value="">Selecione um processo:</option>
-                </select>
+            <div class="info" id="pagamento" style="display: none;">
+                <h2>Método de Pagamento</h2>
+                <p><strong>Forma de Pagamento:</strong> <span id="cliente-pagamento"></span></p>
             </div>
-            <div id="detalhes">
-                <h2>Detalhes do Processo:</h2>
-                <ul id="detalhes-list"></ul>
-            </div>
-            <div id="fluxograma" style="display: none;">
+            <div class="info" id="servicos" style="display: none;">
+                <h2>Serviços Prestados</h2>
+                <p><strong>Tipo de Serviço Prestado:</strong> <span id="cliente-servico"></span></p>
             </div>
         </div>
     </div>
+
     <script src="script3.js"></script>
 </body>
 </html>

@@ -1,9 +1,19 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Processos Internos</title>
+    <title>Manual da Empresa - Perguntas Frequentes</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilização básica para mostrar os dados lado a lado */
+    
+        #resposta {
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -20,33 +30,22 @@
             </div>
         </div>
         <h1>Manual da Empresa</h1>
+
+        <!-- Dropdown para selecionar perguntas -->
         <div>
-            <label for="areas">Área:</label>
-            <select id="areas" onchange="loadCargos()">
-                <option value="">Selecione uma área:</option>
+            <label for="areas">Selecione uma pergunta:</label>
+            <select id="areas" onchange="loadAnswer()">
+                <option value="">Selecione uma pergunta:</option>
             </select>
         </div>
-        <div>
-            <label for="cargos">Cargo:</label>
-            <select id="cargos" onchange="loadProcessos()">
-                <option value="">Selecione um cargo:</option>
-            </select>
-        </div>
-        <div>
-            <label for="processos">Processo:</label>
-            <select id="processos" onchange="loadDetalhes()">
-                <option value="">Selecione um processo:</option>
-            </select>
-        </div>
-        <div id="detalhes">
-            <h2>Detalhes do Processo:</h2>
-            <ul id="detalhes-list"></ul>
-        </div>
-        <div id="fluxograma" style="display: none;">
-            <img id="fluxograma-imagem" src="" alt="Fluxograma do Processo">
+
+        <!-- Div para exibir a resposta -->
+        <div id="resposta" style="display: none;">
+            <h2>Resposta:</h2>
+            <p id="resposta-texto"></p>
         </div>
     </div>
-</div>
+
     <script src="script2.js"></script>
 </body>
 </html>
