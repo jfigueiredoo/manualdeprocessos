@@ -218,7 +218,7 @@ function loadDetalhes() {
 // Verifica se o usuário está logado
 if (!localStorage.getItem('isLoggedIn')) {
     // Se não estiver logado, redireciona para a página de login
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
 }
 
 // Carregar as áreas assim que a página carregar

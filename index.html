@@ -1,56 +1,46 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Processos Internos</title>
+    <title>Login</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Conteúdo Principal -->
+    <div class="container" id="loginContainer">
+        <img src="logo2.png" alt="">
+        <h1>Login</h1>
+        <!-- Alterado de class="loginForm" para id="loginForm" -->
+        <form id="loginForm">
+            <label for="username">Login:</label>
+            <input placeholder="Insira seu Login" type="text" id="username" name="username" required>
 
-    <div id="main-content">
-        <div class="container">
-            <img src="logo2.png" alt="Logo do Meu Site" class="logo">
-            <div class="botoes">
-                <div class="botao1">
-                    <button>Manual de Processos</button>
-                </div>
-                <div class="botao2">
-                    <button onclick="window.location.href='empresa.html'">Manual da Empresa</button>
-                </div>
-                <div class="botao3">
-                    <button onclick="window.location.href='cliente.html'">Manual do Cliente</button>
-                </div>
-            </div>            
-            <h1>Manual de Processos</h1>
-            <div>
-                <label for="areas">Área:</label>
-                <select id="areas" onchange="loadCargos()">
-                    <option value="">Selecione uma área:</option>
-                </select>
-            </div>
-            <div>
-                <label for="cargos">Cargo:</label>
-                <select id="cargos" onchange="loadProcessos()">
-                    <option value="">Selecione um cargo:</option>
-                </select>
-            </div>
-            <div>
-                <label for="processos">Processo:</label>
-                <select id="processos" onchange="loadDetalhes()">
-                    <option value="">Selecione um processo:</option>
-                </select>
-            </div>
-            <div id="detalhes">
-                <h2>Detalhes do Processo:</h2>
-                <ul id="detalhes-list"></ul>
-            </div>
-            <div id="fluxograma" style="display: none;">
-                <img id="fluxograma-imagem" src="" alt="Fluxograma do Processo">
-            </div>
-        </div>
+            <label for="password">Senha:</label>
+            <input placeholder="Insira sua senha" type="password" id="password" name="password" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="errorMessage" style="color: red;"></p>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevenir o comportamento padrão de envio do formulário
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Verificação simples de credenciais
+    if (username === 'fcapjr' && password === '1234') {
+        localStorage.setItem('isLoggedIn', 'true');  // Armazena o estado de login
+        window.location.href = 'principal.html';  // Redireciona para a página principal
+    } else {
+        document.getElementById('errorMessage').textContent = 'Usuário ou senha incorretos';
+    }
+});
+
+    </script>
+
 </body>
 </html>
