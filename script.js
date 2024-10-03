@@ -215,8 +215,10 @@ function loadDetalhes() {
     }
 }
 
+// Verifica se o usuário está logado
 if (!localStorage.getItem('isLoggedIn')) {
-    window.location.href = 'login.html';  // Redirecionar para a página de login se não estiver logado
+    // Se não estiver logado, redireciona para a página de login
+    window.location.href = 'login.html';
 }
 
 // Carregar as áreas assim que a página carregar
