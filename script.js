@@ -215,5 +215,9 @@ function loadDetalhes() {
     }
 }
 
+if (!localStorage.getItem('isLoggedIn')) {
+    window.location.href = 'login.html';  // Redirecionar para a página de login se não estiver logado
+}
+
 // Carregar as áreas assim que a página carregar
 document.addEventListener('DOMContentLoaded', loadAreas);

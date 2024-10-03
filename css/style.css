@@ -40,6 +40,11 @@ select {
     color: rgb(255, 255, 255);
 }
 
+.botoes button:hover {
+    background-color: #112e64;
+    transition: 0.3s;
+}
+
 #detalhes {
     margin-top: 20px;
     color: #1a4492;
@@ -107,32 +112,9 @@ img{
     transform: translate(-50%, -50%);
 }
 
-.login-container .logo img {
-    width: 120px;
-    margin-bottom: 20px;
-}
-
-.login-container h2 {
-    margin-bottom: 20px;
-    color: #1a4492;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #1a4492;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.container{
+    display: flex;
+    flex-direction: column;
 }
 
 button {
@@ -146,8 +128,29 @@ button {
     font-size: 16px;
 }
 
+/* Grupo de inputs do login */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1a4492;
+}
+
+input {
+    width: 576px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
 button:hover {
-    background-color: #1a4492;
+    background-color: #112e64;
 }
 
 .error-message {

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container" id="loginContainer">
+        <img src="logo2.png" alt="">
+        <h1>Login</h1>
+        <!-- Alterado de class="loginForm" para id="loginForm" -->
+        <form id="loginForm">
+            <label for="username">Login:</label>
+            <input placeholder="Insira seu Login" type="text" id="username" name="username" required>
+
+            <label for="password">Senha:</label>
+            <input placeholder="Insira sua senha" type="password" id="password" name="password" required>
+
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="errorMessage" style="color: red;"></p>
+    </div>
+
+    <script>
+        // Simulando credenciais
+        const USERNAME = "fcapjr";
+        const PASSWORD = "1234";
+
+        // Selecionar o formulário pelo ID correto
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevenir o comportamento padrão de envio do formulário
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verificação de credenciais
+            if (username === USERNAME && password === PASSWORD) {
+                localStorage.setItem('isLoggedIn', 'true');  // Armazenar login no localStorage
+                window.location.href = 'index.html';  // Redirecionar para a página principal
+            } else {
+                document.getElementById('errorMessage').textContent = 'Usuário ou senha incorretos';
+            }
+        });
+    </script>
+
+</body>
+</html>
